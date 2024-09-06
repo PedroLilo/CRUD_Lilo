@@ -1,0 +1,43 @@
+Verifico a pasta do meu projeto, verifico se esta no meu github
+    git remote -v
+
+executar:
+    git pull origin master(main)
+
+Quero clonar o meu projeto em uma pasta vazia
+    git clone https://caminho do projeto .
+
+instalar a extensão do python
+abro o terminal e verifico se abre no venv, caso nao abra eu executo:
+    ctrl shift p
+e digitar enviroment e pedir para criar um ambiente virtual
+
+instalações necessarias
+- pip install flask
+- pip install Flask-SQLAlchemy
+- pip install Flask-Migrate
+- pip install Flask-Script
+- pip install pymysql
+
+Flask para banco de dados
+- flask db init -> executo quando não tenho a pasta migrations
+- flask db migrate -m "Migração inicial" -> executo quando não tenho o arquivo python na pasta versions
+- flask db upgrade -> executo quando minhas tabelas não estão criadas no meu banco de daods
+
+Rodar flask no google
+- flask run --debug
+
+postar no github:
+ - git remote -v
+ - git init
+ - git remote add origin "Link do github"
+ - git add .
+ - git config user.name "nome do github"
+ - git config user.email "email do github"
+ - git git commit -m "nome do envio"
+ - git push origin master
+
+chegou na aula
+ - git remote -v
+ - git pull origin master -> para verificar se esta conectado certo
+ - git clone "Link do github"
