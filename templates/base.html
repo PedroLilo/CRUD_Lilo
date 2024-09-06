@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/estilo.css')}}">
 </head>
 <body>
+    <header>
+        <p>CRUD DO LELO</p>
+    </header>
     <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/form">Formulário</a>
-            </li>
-            <li>
-                <a href="/usuario">Usuário</a>
-            </li>
-        </ul>
+        <a href="/">Home</a>
+        <a href="/form">Formulário</a>
+        <a href="/filme">Filme</a>
     </nav>
     <main>
         {% block conteudo %}
         {% endblock %}
     </main>
+
+    <footer>
+        <label>&#169; Copyleft<label>
+    </footer>
 </body>
 </html>

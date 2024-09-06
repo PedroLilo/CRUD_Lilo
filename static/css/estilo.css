@@ -1,19 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,700;1,700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Comic Neue';
+}
+
+:root {
+    --primary: rgb(81, 162, 255);
+    --secondary: rgb(51, 106, 168);;
+    --black: #000;
+    --white: #FFF;
+}
+
 a, input{
     display: block;
 
 }
 
 img{
-    width: 30rem;
+    width: 20rem;
 }
 
-table, tr, td, th{
-    border: 2px solid pink;
-    border-collapse: collapse;
-}
 
 div.message{
-    color: tomato;
+    color: red;
     font-size: large;
     font-weight: bold;
+}
+
+/*header*/
+
+header{
+    display: flex;
+    background-color: var(--primary);
+    justify-content: space-between;
+    height: 6rem;
+}
+
+header p{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: xx-large;
+}
+
+nav{
+    width: 100%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: xx-large;
+}
+
+nav a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+/*main*/
+
+main{
+    background-color: var(--white);
+    min-height: calc(100vh - 10.3rem);
+}
+
+main h1{
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main div img{
+    width: 40rem;
+}
+
+main div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*filme*/
+
+.tab_filme tr, td, th{
+    border: 2px solid var(--primary);
+    border-collapse: collapse;
+    
+}
+
+table, tr, td{
+    border: 1px solid var(--black);
+    border-collapse: collapse;
+    margin: 2rem;
+}
+
+td.materia{
+    text-align: start;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tr td b{
+    display: flex;
+    justify-content: center;
+}
+
+table tr td{
+    padding: 5px;
+    text-align: center;
+}
+
+
+/*footer*/
+
+footer{
+    background-color: var(--secondary);
+    height: 2rem;
+}
+
+footer label{
+    font-size: 1.5rem;
+    color: var(--white);
 }

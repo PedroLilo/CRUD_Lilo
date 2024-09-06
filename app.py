@@ -1,15 +1,14 @@
 from flask import Flask, render_template, request, flash, redirect
-
 from database import db
 from flask_migrate import Migrate
-from models import Usuario
+from models import Filme
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '9ebe6f92407c97b3f989420e0e6bebcf9d1976b2e230acf9faf4783f5adffe1b'
 
 # --> drive://usuario:senha@servidor/banco_de_dados
 
-conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/flaskg1"
+conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/Crud_lilo"
 app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -37,64 +36,64 @@ def dados():
     dados = request.form
     return render_template('dados.html', dados = dados)
 
-@app.route("/usuario")
-def usuario():
-    u = Usuario.query.all()
-    return render_template("usuario_lista.html", dados = u)
+@app.route("/filme")
+def filme():
+    u = Filme.query.all()
+    return render_template("filme_lista.html", dados = u)
 
-@app.route("/usuario/add")
-def usuario_add():
-    return render_template("usuario_add.html")
+@app.route("/filme/add")
+def filme_add():
+    return render_template("filme_add.html")
 
-@app.route("/usuario/save", methods=['POST'])
-def usuario_save():
-    nome = request.form.get('nome')
-    email = request.form.get('email')
-    idade = request.form.get('idade')
-    if nome and email and idade:
-        usuario = Usuario(nome, email, idade)
-        db.session.add(usuario)
+@app.route("/filme/save", methods=['POST'])
+def filme_save():
+    titulo = request.form.get('titulo')
+    diretor = request.form.get('diretor')
+    ano_lancamento = request.form.get('ano_lancamento')
+    if titulo and diretor and ano_lancamento:
+        filme = Filme(titulo, diretor, ano_lancamento)
+        db.session.add(filme)
         db.session.commit()
-        flash('Usuário cadastrado com sucesso!! :D')
-        return redirect('/usuario')
+        flash('Filme cadastrado com sucesso!! :D')
+        return redirect('/filme')
     else:
         flash('Preencha todos os campos! >:(')
-        return redirect('/usuario/add')
+        return redirect('/filme/add')
 
-@app.route("/usuario/remove/<int:id>")
-def usuario_remove(id):
-    usuario = Usuario.query.get(id)
-    if usuario:
-        db.session.delete(usuario)
+@app.route("/filme/remove/<int:id>")
+def filme_remove(id):
+    filme = Filme.query.get(id)
+    if filme:
+        db.session.delete(filme)
         db.session.commit()
-        flash('Usuário removido com sucesso!')
-        return redirect("/usuario")
+        flash('Filme removido com sucesso!')
+        return redirect("/filme")
     else:
         flash("Caminho incorreto!")
-        return redirect("/usuario")
+        return redirect("/filme")
 
-@app.route("/usuario/edita/<int:id>")
-def usuario_edita(id):
-    usuario = Usuario.query.get(id)
-    return render_template("usuario_edita.html", dados=usuario)
+@app.route("/filme/edita/<int:id>")
+def filme_edita(id):
+    filme = Filme.query.get(id)
+    return render_template("filme_edita.html", dados=filme)
 
-@app.route("/usuario/editasave", methods=['POST'])
-def usuario_editasave():
-    nome = request.form.get('nome')
-    email = request.form.get('email')
-    idade = request.form.get('idade')
-    id = request.form.get('id')
-    if id and nome and email and idade:
-        usuario = Usuario.query.get(id)
-        usuario.nome = nome
-        usuario.email = email
-        usuario.idade = idade
+@app.route("/filme/editasave", methods=['POST'])
+def filme_editasave():
+    titulo = request.form.get('titulo')
+    diretor = request.form.get('diretor')
+    ano_lancamento = request.form.get('ano_lancamento')
+    id_filme = request.form.get('id_filme')
+    if id_filme and titulo and diretor and ano_lancamento:
+        filme = Filme.query.get(id)
+        filme.titulo = titulo
+        filme.diretor = diretor
+        filme.ano_lancamento = ano_lancamento
         db.session.commit()
         flash('Dados atualizados com sucesso!')
-        return redirect('/usuario')
+        return redirect('/filme')
     else:
         flash('Dados incompletos.')
-        return redirect("/usuario")
+        return redirect("/filme")
 
 
 if __name__ == '__main__':

@@ -1,18 +1,18 @@
 from database import db
 
-class Usuario(db.Model):
-    __tablename__= "usuario"
-    id = db.Column(db.Integer, primary_key = True)
-    nome = db.Column(db.String(100))
-    email = db.Column(db.String(100))
-    idade = db.Column(db.Integer)
+class Filme(db.Model):
+    __tablename__= "filme"
+    id_filme = db.Column(db.Integer, primary_key = True)
+    titulo = db.Column(db.String(100))
+    diretor = db.Column(db.String(100))
+    ano_lancamento = db.Column(db.Integer)
 
     # construtor
-    def __init__(self, nome, email, idade):
-        self.nome = nome
-        self.email = email
-        self.idade = idade
+    def __init__(self, titulo, diretor, ano_lancamento):
+        self.titulo = titulo
+        self.diretor = diretor
+        self.ano_lancamento = ano_lancamento
 
     # representação do objeto criado...
     def __repr__(self):
-        return "<Usuario {}>".format(self.nome)
+        return "<Filme {}>".format(self.nome)

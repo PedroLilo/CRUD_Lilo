@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages()%}
+    {% if mensagens%}
+        {% for msg in mensagens%}
+        <div class="message">
+            {{msg}}
+        </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/filme/save" method="post">
+        <label for="titulo">titulo: </label>
+        <input type="text" name="titulo" id="titulo">
+        <label for="diretor">diretor: </label>
+        <input type="text" name="diretor" id="diretor">
+        <label for="ano">ano_lancamento: </label>
+        <input type="number" name="ano" id="ano">
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}
