@@ -1,15 +1,9 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    {% set mensagens = get_flashed_messages()%}
-    {% if mensagens%}
-        {% for msg in mensagens%}
-        <div class="message">
-            {{msg}}
-        </div>
-        {% endfor %}
-    {% endif %}
-    <a href="/filme/add">+ Adicionar</a>
+    <div class="add">
+        <a href="/filme/add">+ Adicionar</a>
+    </div>
     <table class="tab_filme">
         <tr>
             <th>Titulo</th>
@@ -28,4 +22,12 @@
         </tr>
         {% endfor %}
     </table>
+    {% set mensagens = get_flashed_messages()%}
+    {% if mensagens%}
+        {% for msg in mensagens%}
+        <div class="message">
+            {{msg}}
+        </div>
+        {% endfor %}
+    {% endif %}
 {% endblock %}

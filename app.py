@@ -60,9 +60,9 @@ def filme_save():
         flash('Preencha todos os campos! >:(')
         return redirect('/filme/add')
 
-@app.route("/filme/remove/<int:id>")
-def filme_remove(id):
-    filme = Filme.query.get(id)
+@app.route("/filme/remove/<int:id_filme>")
+def filme_remove(id_filme):
+    filme = Filme.query.get(id_filme)
     if filme:
         db.session.delete(filme)
         db.session.commit()
@@ -72,9 +72,9 @@ def filme_remove(id):
         flash("Caminho incorreto!")
         return redirect("/filme")
 
-@app.route("/filme/edita/<int:id>")
-def filme_edita(id):
-    filme = Filme.query.get(id)
+@app.route("/filme/edita/<int:id_filme>")
+def filme_edita(id_filme):
+    filme = Filme.query.get(id_filme)
     return render_template("filme_edita.html", dados=filme)
 
 @app.route("/filme/editasave", methods=['POST'])
@@ -84,7 +84,7 @@ def filme_editasave():
     ano_lancamento = request.form.get('ano_lancamento')
     id_filme = request.form.get('id_filme')
     if id_filme and titulo and diretor and ano_lancamento:
-        filme = Filme.query.get(id)
+        filme = Filme.query.get(id_filme)
         filme.titulo = titulo
         filme.diretor = diretor
         filme.ano_lancamento = ano_lancamento

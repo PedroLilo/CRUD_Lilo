@@ -22,13 +22,6 @@ img{
     width: 20rem;
 }
 
-
-div.message{
-    color: red;
-    font-size: large;
-    font-weight: bold;
-}
-
 /*header*/
 
 header{
@@ -88,36 +81,38 @@ main div{
 }
 /*filme*/
 
-.tab_filme tr, td, th{
-    border: 2px solid var(--primary);
-    border-collapse: collapse;
-    
+.message{
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    padding-top: 10rem;
+    font-size: 3rem;
 }
 
-table, tr, td{
-    border: 1px solid var(--black);
-    border-collapse: collapse;
-    margin: 2rem;
-}
-
-td.materia{
-    text-align: start;
-}
-
-table{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table tr td b{
+.add a{
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--black);
+    padding-top: 10rem;
 }
 
-table tr td{
-    padding: 5px;
-    text-align: center;
+.tab_filme, tr, td, th{
+    border: 2px solid var(--primary);
+    border-collapse: collapse;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
 }
+
+table {
+    padding-top: 10rem;
+    margin: auto;
+}
+
+/*Formulario*/
+
 
 
 /*footer*/

@@ -10,13 +10,13 @@
         {% endfor %}
     {% endif %}
     <form action="/filme/editasave" method="post">
-        <input type="hidden" name="id", value="{{dados.id}}">
+        <input type="hidden" name="id", value="{{dados.id_filme}}">
         <label for="titulo">Titulo: </label>
         <input type="text" name="titulo" id="titulo", value="{{dados.titulo}}">
         <label for="text">Diretor: </label>
         <input type="diretor" name="diretor" id="diretor", value="{{dados.diretor}}">
-        <label for="ano">ano_lancamento: </label>
-        <input type="number" name="ano" id="ano", value="{{dados.ano}}">
+        <label for="ano_lancamento">ano_lancamento: </label>
+        <input type="number" name="ano_lancamento" id="ano_lancamento", value="{{dados.ano_lancamento}}">
         <button type="submit">Salvar</button>
     </form>
 {% endblock %}

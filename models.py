@@ -15,4 +15,4 @@ class Filme(db.Model):
 
     # representação do objeto criado...
     def __repr__(self):
-        return "<Filme {}>".format(self.nome)
+        return "<Filme {}>".format(self.titulo)

@@ -1,8 +1,8 @@
-"""tabela_filme
+"""filmes
 
-Revision ID: 1c6a868216f5
+Revision ID: be4af6f77d5f
 Revises: 
-Create Date: 2024-09-06 13:33:38.873747
+Create Date: 2024-09-09 12:25:44.558670
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1c6a868216f5'
+revision = 'be4af6f77d5f'
 down_revision = None
 branch_labels = None
 depends_on = None
