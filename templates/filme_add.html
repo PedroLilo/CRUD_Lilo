@@ -2,6 +2,26 @@
 
 {% block conteudo %}
     {% set mensagens = get_flashed_messages()%}
+
+    <form action="/filme/save" method="post">
+        <fieldset>
+            <div>
+                <label for="titulo">titulo: </label>
+                <input type="text" name="titulo" id="titulo">
+            </div> 
+            <div>
+                <label for="diretor">diretor: </label>
+                <input type="text" name="diretor" id="diretor">
+            </div>
+            <div>
+                <label for="ano_lancamento">ano_lancamento: </label>
+                <input type="number" name="ano_lancamento" id="ano_lancamento">
+            </div>
+            <div>
+                <button type="submit">Salvar</button>
+            </div>        
+        </fieldset>
+    </form>
     {% if mensagens%}
         {% for msg in mensagens%}
         <div class="message">
@@ -9,13 +29,4 @@
         </div>
         {% endfor %}
     {% endif %}
-    <form action="/filme/save" method="post">
-        <label for="titulo">titulo: </label>
-        <input type="text" name="titulo" id="titulo">
-        <label for="diretor">diretor: </label>
-        <input type="text" name="diretor" id="diretor">
-        <label for="ano_lancamento">ano_lancamento: </label>
-        <input type="number" name="ano_lancamento" id="ano_lancamento">
-        <button type="submit">Salvar</button>
-    </form>
 {% endblock %}

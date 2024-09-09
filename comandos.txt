@@ -13,11 +13,11 @@ abro o terminal e verifico se abre no venv, caso nao abra eu executo:
 e digitar enviroment e pedir para criar um ambiente virtual
 
 instalações necessarias
-- pip install flask
-- pip install Flask-SQLAlchemy
-- pip install Flask-Migrate
-- pip install Flask-Script
-- pip install pymysql
+    pip install flask
+    pip install Flask-SQLAlchemy
+    pip install Flask-Migrate
+    pip install Flask-Script
+    pip install pymysql
 
 Flask para banco de dados
 - flask db init -> executo quando não tenho a pasta migrations

@@ -1,8 +1,8 @@
-"""filmes
+"""Filmes
 
-Revision ID: be4af6f77d5f
+Revision ID: ccb7cf0a82b5
 Revises: 
-Create Date: 2024-09-09 12:25:44.558670
+Create Date: 2024-09-09 16:58:07.718724
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'be4af6f77d5f'
+revision = 'ccb7cf0a82b5'
 down_revision = None
 branch_labels = None
 depends_on = None

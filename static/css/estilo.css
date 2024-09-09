@@ -56,6 +56,10 @@ nav a{
     color: var(--white);
 }
 
+nav a:hover{
+    color: aquamarine;
+    text-decoration: underline;
+}
 /*main*/
 
 main{
@@ -70,6 +74,10 @@ main h1{
     justify-content: center;
 }
 
+main a{
+    font-size: 2rem;
+}
+
 main div img{
     width: 40rem;
 }
@@ -82,10 +90,10 @@ main div{
 /*filme*/
 
 .message{
-    color: red;
+    color: rgb(135, 154, 236);
     font-size: large;
     font-weight: bold;
-    padding-top: 10rem;
+    padding-top: 5rem;
     font-size: 3rem;
 }
 
@@ -103,7 +111,7 @@ main div{
     border-collapse: collapse;
     padding-left: 1rem;
     padding-right: 1rem;
-
+    font-size: 2rem;
 }
 
 table {
@@ -113,6 +121,35 @@ table {
 
 /*Formulario*/
 
+form{
+    padding-top: 5rem;
+}
+
+fieldset{
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+fieldset div{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    font-size: 2rem;
+}
+
+fieldset div input{
+    height: 2rem;
+}
+
+fieldset div button{
+    font-size: 2rem;
+}
 
 
 /*footer*/
