@@ -125,7 +125,7 @@ form{
     padding-top: 5rem;
 }
 
-fieldset{
+.adicionar{
     width: fit-content;
     height: fit-content;
     flex-direction: column;
@@ -135,7 +135,7 @@ fieldset{
     border: 2px solid black;
 }
 
-fieldset div{
+.adicionar div{
     padding: 0.5rem;
     display: flex;
     justify-content: right;
@@ -143,11 +143,37 @@ fieldset div{
     font-size: 2rem;
 }
 
-fieldset div input{
+.adicionar div input{
     height: 2rem;
 }
 
-fieldset div button{
+.adicionar div button{
+    font-size: 2rem;
+}
+
+.edita{
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+
+.edita div{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    font-size: 2rem;
+}
+
+.edita div input{
+    height: 2rem;
+}
+
+.edita div button{
     font-size: 2rem;
 }
 
