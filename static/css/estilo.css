@@ -7,8 +7,8 @@
 }
 
 :root {
-    --primary: rgb(81, 162, 255);
-    --secondary: rgb(51, 106, 168);;
+    --primary: rgb(255, 0, 0);
+    --secondary: rgb(168, 2, 2);;
     --black: #000;
     --white: #FFF;
 }
@@ -57,7 +57,6 @@ nav a{
 }
 
 nav a:hover{
-    color: aquamarine;
     text-decoration: underline;
 }
 /*main*/
